@@ -1,0 +1,24 @@
+
+.cart{
+    z-index: 10;
+    position: absolute;
+    height: 410%;
+    width: 40%;
+    background-color: whitesmoke;
+    top: 0;
+    right: 0;
+    /* opacity: 0.5; */
+    overflow: auto;
+    animation: drop-in 500ms;
+   
+}
+@keyframes drop-in {
+    from {
+        transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+      opacity: 1;
+    }
+  }

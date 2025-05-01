@@ -1,0 +1,23 @@
+.right-nav-bar{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5rem;
+    padding: 0.7rem;
+    align-items: center;
+    position: relative;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-around ;
+}
+
+.right-nav-bar>a{
+    color: white;
+}
+.count{
+    position: absolute;
+    top: 50%;
+    right: -1%;
+}
+

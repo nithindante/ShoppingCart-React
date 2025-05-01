@@ -1,0 +1,27 @@
+.mainDiv{
+    /* background: url('../assets/clothing.jpg');
+    background-size: contain;
+    height: 500px;
+    width: 500px; */
+}
+
+.wall-image{
+    height: 80%;
+    width: 100%;
+}
+
+.shopping-div{
+    position: relative;
+}
+
+h1{
+    position:absolute;
+    top: 20%;
+    right: 44%;
+}
+
+.innerButton{
+position: absolute;
+top: 37%;
+right: 46%;
+}
