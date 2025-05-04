@@ -1,6 +1,7 @@
 
 .cart{
     z-index: 10;
+    padding: 1rem;
     position: absolute;
     height: 410%;
     width: 40%;
@@ -10,7 +11,14 @@
     /* opacity: 0.5; */
     overflow: auto;
     animation: drop-in 500ms;
+    display: flex;
+    flex-direction: column;
    
+}
+
+.cart > button{
+  width: 100px;
+  align-self: flex-end;
 }
 @keyframes drop-in {
     from {
@@ -22,3 +30,94 @@
       opacity: 1;
     }
   }
+
+  .inactive{
+    display: none;
+    animation: drop-in 500ms;
+  }
+
+  .inner-items{
+    display: grid;
+    padding: 0.5rem;
+    grid-template-columns: 0.2fr 0.7fr 0.1fr;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+
+  .itemsCart{
+    padding: 0.5rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+  }
+
+  .inner-items>img{
+    width: 100px;
+    height: 100px;
+    border-radius: 24px;
+}
+
+.inner-items>p, div> p, div> span, div>strong{
+  color: black;
+}
+
+.innerDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.quantityDiv{
+  display: flex
+  ;
+      align-items: center;
+      border: 1px solid rgb(118, 173, 150);
+      border-radius: 24px;
+      margin-right: 6px;
+      padding-left: 4px;
+      padding-right: 4px;
+}
+
+.quantityDiv> div{
+  background: none;
+    border: none;
+    font-size: 1em;
+    color: #40705c;
+    padding: 0.4rem;
+}
+
+.totalDiv{
+  text-align: end;
+  padding: 1rem;
+}
+
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}

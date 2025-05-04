@@ -4,12 +4,18 @@ import "../styles/Shop-page.css";
 import InnerForm from "./InnerForm";
 import Carts from "./Cart";
 function ShopPage() {
+  
   const [clothes, setClothes] = useState(null);
+  const [inactiveDivs,setInactiveDivs]= useState(false);
   const [count,setCount] = useState(0)
   const [displayCart,setDisplayCart] = useState(false);
+  const [cartItems,setCartItems] = useState([]);
+  const [total,setTotal] = useState(0);
+  console.log(inactiveDivs)
   function showCart()
   {
     setDisplayCart(true)
+    setInactiveDivs(true);
   }
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", {
@@ -22,23 +28,22 @@ function ShopPage() {
 function closeButton()
 {
   setDisplayCart(false)
+  setInactiveDivs(false);
 }
   return (
     clothes && (
       <>
-        <Navigation count = {count} showCart={showCart}></Navigation>
-          {displayCart && (
+        <Navigation count = {count} showCart={showCart} className={inactiveDivs?'nav-bar inactive-divs':'nav-bar'}></Navigation>
+          
             
-            <Carts closeButton={closeButton}></Carts>
+            <Carts closeButton={closeButton} displayCart={displayCart} cartItems={cartItems} setTotal={setTotal} setCartItems={setCartItems} setCount={setCount} count={count}></Carts>
             
-          )}
-        <div className="shop-grid">
+          
+        <div className={inactiveDivs?'shop-grid inactive-divs':'shop-grid'}>
           {clothes.map((item) => {
             return (
               <div key={item.id} className="itemDiv">
-                <img src={item.image}></img>
-                <h5>{item.title}</h5>
-                <InnerForm count = {count} setCount={setCount}></InnerForm>
+                <InnerForm count = {count} setCount={setCount} setCartItems={setCartItems} item={item} cartItems={cartItems}></InnerForm>
               </div>
             );
           })}
