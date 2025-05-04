@@ -25,3 +25,8 @@ position: absolute;
 top: 37%;
 right: 46%;
 }
+
+.inactive-divs{
+    pointer-events: none;
+    opacity: 0.2;
+}
